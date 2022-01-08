@@ -1,0 +1,60 @@
+﻿@page
+@model Nadina_Proiect3.Pages.ProduseLiving.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Decoratiuni Living</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Living[0].Denumire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Living[0].Cod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Living[0].Pret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Living[0].Material)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Living[0].Culoare)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Living) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Denumire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Material)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Culoare)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.LivingId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.LivingId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.LivingId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

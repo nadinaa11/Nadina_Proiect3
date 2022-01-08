@@ -1,0 +1,54 @@
+﻿@page
+@model Nadina_Proiect3.Pages.ProduseDorm.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Dormitor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Dormitor.Denumire" class="control-label"></label>
+                <input asp-for="Dormitor.Denumire" class="form-control" />
+                <span asp-validation-for="Dormitor.Denumire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dormitor.Cod" class="control-label"></label>
+                <input asp-for="Dormitor.Cod" class="form-control" />
+                <span asp-validation-for="Dormitor.Cod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dormitor.Pret" class="control-label"></label>
+                <input asp-for="Dormitor.Pret" class="form-control" />
+                <span asp-validation-for="Dormitor.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dormitor.Material" class="control-label"></label>
+                <input asp-for="Dormitor.Material" class="form-control" />
+                <span asp-validation-for="Dormitor.Material" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dormitor.Culoare" class="control-label"></label>
+                <input asp-for="Dormitor.Culoare" class="form-control" />
+                <span asp-validation-for="Dormitor.Culoare" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
